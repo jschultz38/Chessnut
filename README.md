@@ -22,15 +22,15 @@ From here you can use `pip` or `setup.py` to install the package and it will be 
 ### PIP
 `pip` is the easiest way to install __Chessnut__. It can be installed directly from the [pypi](https://pypi.python.org/) [package](https://pypi.python.org/pypi/Chessnut):
 
-`pip install Chessnut`
+`pip install Chessnut4jschultz38`
 
 Upgrading to the latest version can be performed with the `-U` flag:
 
-`pip install -U Chessnut`
+`pip install -U Chessnut4jschultz38`
 
-Or from the [github](https://github.com/) [repository](https://github.com/cgearhart/Chessnut.git):
+Or from the [github](https://github.com/) [repository](https://github.com/jschultz38/Chessnut.git):
 
-`pip install git+https://github.com/cgearhart/Chessnut.git`
+`pip install git+https://github.com/jschultz38/Chessnut.git`
 
 ### Setup.py
 If you prefer, you can install __Chessnut__ manually with `setup.py`. After downloading the source files to a local directory (and setting up a `virtualenv`), switch into the project directory and run `setup.py`:
