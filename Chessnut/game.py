@@ -113,6 +113,10 @@ class Game(object):
         #     move = 'e1c1' if self.state.player == 'w' else 'e8c8'
         # return move
 
+    def apply_moves(self, moves):
+        for m in moves:
+            self.apply_move(m)
+
     def apply_move(self, move):
         """
         Take a move in simple algebraic notation and apply it to the game.
@@ -124,6 +128,7 @@ class Game(object):
         target, ply, and turn), apply the move to the game board, and
         update the game history.
         """
+
 
         # declare the status fields using default parameters
         fields = ['w', 'KQkq', '-', 0, 1]
@@ -350,12 +355,11 @@ class Game(object):
 
     @property
     def status(self):
-
         k_sym, opp = {'w': ('K', 'b'), 'b': ('k', 'w')}.get(self.state.player)
         k_loc = Game.i2xy(self.board.find_piece(k_sym))
         can_move = len(self.get_moves())
-        is_exposed = [m[2:] for m in self._all_moves(player=opp)
-                      if m[2:] == k_loc]
+        is_exposed = [m[2:4] for m in self._all_moves(player=opp)
+                      if m[2:4] == k_loc]
 
         status = Game.NORMAL
         if is_exposed:
